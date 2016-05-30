@@ -106,6 +106,6 @@ var CommentContent = React.createClass({
     }
 });
 ReactDOM.render(
-    <CommentBox url="source/data.json" pollInterval={3000}/>,
+    <CommentBox url="/data.json" pollInterval={3000}/>,
     document.getElementById('content')
 );
