@@ -18,11 +18,25 @@ var CommentTitle = React.createClass({
         );
     }
 });
+var CommentContents = React.createClass({
+    render: function() {
+        return (
+            <div className="contents">
+                <CommentContent userName="jason">this is awesome!</CommentContent>
+                <CommentContent userName="杨明昆">碉堡了</CommentContent>
+                <CommentContent userName="john snow">I'm not dead</CommentContent>
+            </div>
+        );
+    }
+});
 var CommentContent = React.createClass({
     render: function() {
         return (
-            <div className="content">
-                我是内容
+            <div className="contentItem">
+                <h2 className="name">
+                    {this.props.userName}
+                </h2>
+                {this.props.children}
             </div>
         );
     }
