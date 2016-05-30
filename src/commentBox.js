@@ -19,22 +19,54 @@ var CommentBox = React.createClass({
         this.loadCommentsFromServer();
         setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     },
+    handleCommentSubmit: function(comment) {
+        var comments = this.state.data;
+        var newComments = comments.concat([comment]);
+        this.setState({data: newComments});
+        $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            type: 'POST',
+            data: comment,
+            success: function(data) {
+                this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+    },
     render: function() {
         return (
             <div className="commentBox">
                 <h1>Comments</h1>
-                <CommentTitle />
+                <CommentForm onCommentSubmit={this.handleCommentSubmit} />
                 <CommentContents data={this.state.data}/>
             </div>
         );
     }
 });
-var CommentTitle = React.createClass({
+var CommentForm = React.createClass({
+    handleSubmit: function(e) {
+        e.preventDefault();
+        var userName = this.refs.userName.value.trim();
+        var text = this.refs.text.value.trim();
+        if (!text || !userName) {
+            alert('plz confirm your form!');
+            return;
+        }
+        this.props.onCommentSubmit({userName: userName, text: text});
+        this.refs.userName.value = '';
+        this.refs.text.value = '';
+        return;
+    },
     render: function() {
         return (
-            <div className="title">
-                我是标题
-            </div>
+            <form className="commentForm" onSubmit={this.handleSubmit}>
+                <input type="text" placeholder="姓名" ref="userName"/>
+                <input type="text" placeholder="你想说的" ref="text"/>
+                <input type="submit" value="Post" />
+            </form>
         );
     }
 });
