@@ -52,11 +52,6 @@ var CommentContent = React.createClass({
         );
     }
 });
-var data = [
-    {userName: "jason:", text: "this is awesome!"},
-    {userName: "杨明昆:", text: "碉堡了!"},
-    {userName: "john snow:", text: "I'm not *dead*"}
-];
 ReactDOM.render(
     <CommentBox data={data}/>,
     document.getElementById('content')
