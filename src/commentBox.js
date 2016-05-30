@@ -4,7 +4,7 @@ var CommentBox = React.createClass({
             <div className="commentBox">
                 <h1>Comments</h1>
                 <CommentTitle />
-                <CommentContent />
+                <CommentContents />
             </div>
         );
     }
@@ -22,9 +22,9 @@ var CommentContents = React.createClass({
     render: function() {
         return (
             <div className="contents">
-                <CommentContent userName="jason">this is awesome!</CommentContent>
-                <CommentContent userName="杨明昆">碉堡了</CommentContent>
-                <CommentContent userName="john snow">I'm not dead</CommentContent>
+                <CommentContent userName="jason:">this is awesome!</CommentContent>
+                <CommentContent userName="杨明昆:">碉堡了</CommentContent>
+                <CommentContent userName="john snow:">I'm not dead</CommentContent>
             </div>
         );
     }
