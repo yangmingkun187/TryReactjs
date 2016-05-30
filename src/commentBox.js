@@ -20,7 +20,7 @@ var CommentTitle = React.createClass({
 });
 var CommentContents = React.createClass({
     render: function() {
-        var commentNodes = this.props.data.map(function (item,i) { //按照教程,出现错误Each child in an array or iterator should have a unique “key” prop.解决办法只要在循环的每个子项添加一个key就行了，
+        var commentNodes = this.props.data.map(function (item,i) {
             return (
                 <CommentContent key={i} userName={item.userName}>
                     {item.text}
