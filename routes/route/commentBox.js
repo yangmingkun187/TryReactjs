@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
 router.get('/user', function(req, res, next) {
   res.send(data);
 });
-router.post('/user', function(req, res, next) {
-  data.concat(req);
-  res.send(data);
+router.post('/add', function(req, res, next) {
+  data = data.concat(JSON.parse(req));
+  res.send(req);
 });
 module.exports = router;

@@ -25,7 +25,7 @@ var CommentBox = React.createClass({
         this.setState({data: newComments});
         // 这里自己没有时间实现后台接口,所以请求是错的...
         $.ajax({
-            url: this.props.url,
+            url: this.props.addUrl,
             dataType: 'json',
             type: 'POST',
             data: comment,
@@ -106,6 +106,6 @@ var CommentContent = React.createClass({
     }
 });
 ReactDOM.render(
-    <CommentBox url="/data.json" pollInterval={3000}/>,
+    <CommentBox url="/commentBox/user" addUrl="/commentBox/add" pollInterval={3000}/>,
     document.getElementById('content')
 );
