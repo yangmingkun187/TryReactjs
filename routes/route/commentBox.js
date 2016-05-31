@@ -13,7 +13,7 @@ router.get('/user', function(req, res, next) {
   res.send(data);
 });
 router.post('/add', function(req, res, next) {
-  data = data.concat(JSON.parse(req));
-  res.send(req);
+    data = data.concat(req.body);
+  res.send(data);
 });
 module.exports = router;

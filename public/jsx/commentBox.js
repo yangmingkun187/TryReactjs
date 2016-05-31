@@ -28,7 +28,11 @@ var CommentBox = React.createClass({
             url: this.props.addUrl,
             dataType: 'json',
             type: 'POST',
-            data: comment,
+            contenType: 'application/json; charset=utf-8',
+            data: {
+                userName: comment.userName,
+                text: comment.text
+            },
             success: function(data) {
                 this.setState({data: data});
             }.bind(this),
