@@ -7,7 +7,7 @@ var data = [
 ];
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('commentBox', { title: 'commentBox' });
+  res.render('commentBox');
 });
 router.get('/user', function(req, res, next) {
   res.send(data);
