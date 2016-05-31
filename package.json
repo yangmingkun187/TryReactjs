@@ -1,0 +1,30 @@
+{
+  "name": "try-react",
+  "version": "1.0.0",
+  "description": "#### 遇到的问题 * 按照教程,出现错误Each child in an array or iterator should have a unique “key” prop. * 原因:React can’t know that your array is static, so you get the warning. The most practical thing to do here is to write something like. * 解决办法:只要在循环的每个子项添加一个key就行了，",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0",
+    "require": "^2.4.20",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangmingkun187/TryReactjs.git"
+  },
+  "author": "Jason Yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangmingkun187/TryReactjs/issues"
+  },
+  "homepage": "https://github.com/yangmingkun187/TryReactjs#readme"
+}
