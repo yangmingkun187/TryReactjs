@@ -1,7 +1,5 @@
 'use strict';
 
-require('newrelic');
-
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -26,11 +24,7 @@ if (app.get('env') === 'production') {
 }
 
 app.set('port', 3000);
-app.use(express.static(path.join(__dirname, './public')));
-app.use(express.static(path.join(__dirname, './.tmp')));
-app.use(express.static(path.join(__dirname, './')));
-app.use(express.static(path.join(__dirname, './jspm_packages')));
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 var router = require('./routes');
 router(app);

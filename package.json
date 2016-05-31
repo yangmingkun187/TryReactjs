@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "consolidate": "^0.14.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
     "jade": "^1.11.0",
