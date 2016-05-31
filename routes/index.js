@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function (app) {
-    app.use('/', require('./router/helloworld'));
-    app.use('/commentBox', require('./router/commentBox'));
+    console.log(app);
+    app.use('/', require('./route/helloworld'));
+    app.use('/commentBox', require('./route/commentBox'));
 };
