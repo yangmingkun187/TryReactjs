@@ -23,7 +23,6 @@ var CommentBox = React.createClass({
         var comments = this.state.data;
         var newComments = comments.concat([comment]);
         this.setState({data: newComments});
-        // 这里自己没有时间实现后台接口,所以请求是错的...
         $.ajax({
             url: this.props.addUrl,
             dataType: 'json',
